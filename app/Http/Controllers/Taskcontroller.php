@@ -21,4 +21,38 @@ class TaskController extends Controller
             'tasks' => $tasks,
         ]);
     }
+ 
+    /**
+        * タスク登録
+        *
+        * @param Request $request
+        * @return Response
+        */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+ 
+        // タスク作成
+        Task::create([
+            'user_id' => 0,
+            'name' => $request->name
+        ]);
+ 
+        return redirect('/tasks');
+    }
+ 
+    /**
+        * タスク削除
+        *
+        * @param Request $request
+        * @param Task $task
+        * @return Response
+        */
+    public function destroy(Request $request, Task $task)
+    {
+        $task->delete();
+        return redirect('/tasks');
+    }
 }

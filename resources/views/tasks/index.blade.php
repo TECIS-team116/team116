@@ -13,7 +13,7 @@
  
         <!-- タスク名 -->
         <div class="form-group">
-            <label for="task-name" class="col-sm-3 control-label">Task</label>
+            <label for="task-name" class="col-sm-3 control-label">商品名</label>
  
             <div class="col-sm-6">
                 <input type="text" name="name" id="task-name" class="form-control">
@@ -24,7 +24,7 @@
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
                 <button type="submit" class="btn btn-default">
-                    <i class="fa fa-plus"></i> Add Task
+                    <i class="fa fa-plus"></i> 追加ボタン
                 </button>
             </div>
         </div>
@@ -35,7 +35,7 @@
 @if (count($tasks) > 0)
 <div class="panel panel-default">
     <div class="panel-heading">
-        Current Tasks
+        一覧
     </div>
  
     <div class="panel-body">
@@ -43,7 +43,7 @@
  
             <!-- テーブルヘッダ -->
             <thead>
-                <th>Task</th>
+                <th>商品</th>
                 <th>&nbsp;</th>
             </thead>
  

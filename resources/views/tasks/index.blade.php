@@ -1,6 +1,7 @@
 @extends('layouts.app')
  
 @section('content')
+{{-- Gitにプッシュするためのコメント --}}
  
 <!-- タスク登録用パネル… -->
 <div class="panel-body">

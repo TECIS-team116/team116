@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
 Route::post('/task', [App\Http\Controllers\TaskController::class, 'store'])->name('task');
 Route::delete('/task/{task}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('/task/{task}');
+Route::get('/', function () {
+    return view('welcome');});
+Route::get('/items', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
+Route::get('/items/add', [App\Http\Controllers\ItemController::class, 'add']);

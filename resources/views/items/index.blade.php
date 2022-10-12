@@ -1,21 +1,22 @@
 @extends('layouts.app')
  
 @section('content')
-{{-- Gitにプッシュするためのコメント --}}
  
-<!-- 商品一覧表示 -->
-@if (count($items) > 0)
+<!-- タスク一覧表示 -->
+
 <div class="panel panel-default">
     <div class="panel-heading">
-        Current Tasks
+        商品一覧画面
     </div>
- 
+ <a href="/items/add">商品登録</a>
     <div class="panel-body">
         <table class="table table-striped item-table">
  
             <!-- テーブルヘッダ -->
             <thead>
-                <th>items</th>
+                <th>商品名</th>
+                <th>種別</th>
+                <th>価格</th>
                 <th>&nbsp;</th>
             </thead>
  
@@ -37,5 +38,4 @@
         </table>
     </div>
 </div>
-@endif
 @endsection

@@ -2,8 +2,5 @@
  
 @section('content')
  
-テスト
+商品登録画面
 
-
-
-@endsection

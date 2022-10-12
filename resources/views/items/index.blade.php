@@ -14,9 +14,10 @@
  
             <!-- テーブルヘッダ -->
             <thead>
-                <th>商品名</th>
+                <th>ID</th>
+                <th>名前</th>
                 <th>種別</th>
-                <th>価格</th>
+                <th>詳細</th>
                 <th>&nbsp;</th>
             </thead>
  
@@ -25,13 +26,13 @@
                 @foreach ($items as $item)
                 <tr>
                     <!-- 商品名 -->
-                    <td class="table-text">
-                        <div>{{ $item->name }}</div>
-                    </td>
+                    <td class="table-text">{{ $item->id }}</td>
  
-                    <td>
-                        <!-- TODO: 削除ボタン -->
-                    </td>
+                    <td class="table-text">{{ $item->name }}</td>
+                    <td class="table-text">{{ $item->id }}</td>
+                    <td class="table-text">{{ $item->id }}</td>
+                    <td class="table-text">{{ $item->id }}</td>
+                    
                 </tr>
                 @endforeach
             </tbody>

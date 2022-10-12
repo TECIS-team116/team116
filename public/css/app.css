@@ -9242,3 +9242,18 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+form.aaa {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.offset-md-100 {
+  margin: 0 auto;
+}
+
+@media (min-width: 768px){
+  .col-md-6 {
+    max-width: 100%;
+}
+}

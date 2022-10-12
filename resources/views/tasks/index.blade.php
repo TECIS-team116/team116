@@ -1,6 +1,7 @@
 @extends('layouts.app')
  
 @section('content')
+{{-- Gitにプッシュするためのコメント --}}
  
 <!-- 商品一覧表示 -->
 @if (count($items) > 0)

@@ -1,8 +1,7 @@
 @extends('layouts.app')
- 
+
 
 @section('content')
-
 
 <div class="container-fluid">
 <div class="row justify-content-center">
@@ -28,7 +27,6 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        商品一覧画面
 
     </div>
  <a href="/items/add">商品登録</a>

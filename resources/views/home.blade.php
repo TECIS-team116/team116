@@ -4,6 +4,7 @@
 
 <div class="container">
 <div class="container-fluid">
+
         <div class="col-md-2 px-0">
             <div class="card">
                 <div class="card-header">{{ __('商品管理システム') }}</div>               
@@ -14,7 +15,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('home') }}">{{ __('商品一覧') }}</a>
+                    <a href="{{ route('items') }}">{{ __('商品一覧') }}</a>
                 </div>
             </div>
         </div>

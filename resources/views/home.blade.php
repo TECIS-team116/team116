@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('home') }}">{{ __('商品一覧') }}</a>
+                    <a href="{{ route('items') }}">{{ __('商品一覧') }}</a>
                 </div>
             </div>
         </div>

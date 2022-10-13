@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-<div class="row justify-content-center">
+<div class="container-fluid">
         <div class="col-md-2 px-0">
             <div class="card">
                 <div class="card-header">{{ __('商品管理システム') }}</div>               

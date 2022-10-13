@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
 <div class="container-fluid">
@@ -18,7 +19,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col-md-10 px-0 ">
             <div class="card">              
                 <div class="card-body2">
@@ -26,7 +27,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        
+
     </div>
  <a href="/items/add">商品登録</a>
     <div class="panel-body">
@@ -64,4 +65,5 @@
         </div>
     </div>
 </div>
+
 @endsection

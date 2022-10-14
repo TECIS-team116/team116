@@ -1,5 +1,6 @@
 @extends('layouts.app')
- 
+
+
 @section('content')
 
 <div class="container-fluid">
@@ -18,35 +19,26 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-10 px-0 ">
+            <div class="card">              
+                <div class="card-body2">
 
 
 <?php
         //$_POSTの中身を確認してみる。
-        print_r($_POST);
+       // print_r($_POST);
     ?>
  
-    <!DOCTYPE html>
-    <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>商品登録画面</title>
-    </head>
-    <body>
+ <div class="card-body">
         <form action="" method="post">
-            <p>名前
-                <input type="text" name="name"></p>
-            <p>種別
-                <input type="text" name="name"></p>
-            <p>詳細
-                <input type="text" name="name"></p>
+        <label for="name" class="col-form-label">名前</label>
+        <input id="title" type="text" class="form-control" name="name" value="">
+        <label for="name" class="col-form-label">状態</label>
+        <input id="title" type="text" class="form-control" name="name" value="">    
+        <label for="name" class="col-form-label">詳細</label>
+        <input id="title" type="text" class="form-control" name="name" value="">
             
-                <p><input type="submit" name="btn_confirm" value="登録"></p>
-
-                
-            
-            
+        <p><input type="submit" name="btn_confirm" value="登録"></p>   
         </form>
-    </body>
-    </html>
+</div>
+@endsection

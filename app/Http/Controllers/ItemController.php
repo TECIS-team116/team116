@@ -27,7 +27,12 @@ class ItemController extends Controller
         return view('items.add');
         
     }
-      /**
+    public function edit(Request $request)
+    {
+        return view('items.edit');
+        
+    }
+    /**
         * タスク登録
         *
         * @param Request $request
@@ -38,13 +43,12 @@ class ItemController extends Controller
             $this->validate($request, [
                 'name' => 'required|max:255',
             ]);
-     
+    
             // タスク作成
             Item::create([
                 'user_id' => 0,
                 'name' => $request->name
-            ]);
-     
+            ]); 
             return redirect('/tasks');
         }
         /**

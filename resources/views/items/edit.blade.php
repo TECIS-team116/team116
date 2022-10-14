@@ -37,7 +37,8 @@
         <label for="name" class="col-form-label">詳細</label>
         <input id="title" type="text" class="form-control" name="name" value="">
             
-        <p><input type="submit" name="btn_confirm" value="登録"></p>   
+        <p><input type="submit" name="btn_confirm" value="編集"></p>   
+        <p><input type="submit" name="btn_confirm" value="削除"></p>
         </form>
 </div>
 @endsection

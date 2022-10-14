@@ -28,3 +28,4 @@ Route::get('/', function () {
     return view('welcome');});
 Route::get('/items', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
 Route::get('/items/add', [App\Http\Controllers\ItemController::class, 'add']);
+Route::get('/items/edit', [App\Http\Controllers\ItemController::class, 'edit']);

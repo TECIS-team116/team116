@@ -21,11 +21,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks');
-Route::post('/task', [App\Http\Controllers\TaskController::class, 'store'])->name('task');
-Route::delete('/task/{task}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('/task/{task}');
-Route::get('/', function () {
-    return view('welcome');});
+
 Route::get('/items', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
 Route::get('/items/add', [App\Http\Controllers\ItemController::class, 'add']);
+
 Route::get('/items/edit', [App\Http\Controllers\ItemController::class, 'edit']);
+Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
+Route::delete('/item/{item}', [App\Http\Controllers\ItemController::class, 'destroy'])->name('/item/{item}');
+Route::get('/', function () {
+    return view('welcome');});

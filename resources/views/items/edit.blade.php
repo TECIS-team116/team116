@@ -21,7 +21,8 @@
         <div class="col-md-10 px-0 ">
             <div class="card">              
                 <div class="card-body2">
-
+                
+            
 
 <?php
         //$_POSTの中身を確認してみる。
@@ -35,10 +36,27 @@
         <label for="name" class="col-form-label">状態</label>
         <input id="title" type="text" class="form-control" name="name" value="">    
         <label for="name" class="col-form-label">詳細</label>
-        <input id="title" type="text" class="form-control" name="name" value="">
-            
-        <p><input type="submit" name="btn_confirm" value="編集"></p>   
-        <p><input type="submit" name="btn_confirm" value="削除"></p>
-        </form>
+        <input id="title" type="text" class="form-control" name="name" value="">   
+        
+        <!-- TODO: 編集ボタン -->
+        <td>
+            <form action="" method="post">
+                @csrf
+                <button type="submit" class="btn-confirm">
+                    編集
+                </button>
+            </form>
+        </td>  
+
+            <!-- TODO: 削除ボタン -->
+        <td>
+            <form action="" method="post">
+                @csrf
+                <button type="submit" class="btn-confirm">
+                    削除
+                </button>
+            </form>
+        </td>  
+</form>
 </div>
 @endsection

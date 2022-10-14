@@ -39,6 +39,7 @@
                 <th>状態</th>
                 <th>詳細</th>
                 <th>&nbsp;</th>
+                <a href="/items/edit">編集</a>
             </thead>
             <!-- テーブル本体 -->
             <tbody>
@@ -48,7 +49,7 @@
                     <td class="table-text">{{ $item->id }}</td>
                     <td class="table-text">{{ $item->name }}</td>
                     <td class="table-text">{{ $item->status }}</td>
-                    <td class="table-text">{{ $item->detail }}</td>                  
+                    <td class="table-text">{{ $item->detail }}</td>    
                 </tr>
                 @endforeach
             </tbody>

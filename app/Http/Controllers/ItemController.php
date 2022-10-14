@@ -49,19 +49,19 @@ class ItemController extends Controller
                 'user_id' => 0,
                 'name' => $request->name
             ]); 
-            return redirect('/tasks');
+            return redirect('/items');
         }
         /**
         * タスク削除
         *
         * @param Request $request
-        * @param Task $task
+        * @param Item $item
         * @return Response
         */
-    public function destroy(Request $request, Item $task)
+    public function destroy(Request $request, Item $item)
     {
-        $task->delete();
-        return redirect('/tasks');
+        $item->delete();
+        return redirect('/items');
     }
     
 }

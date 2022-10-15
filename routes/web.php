@@ -18,15 +18,21 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//ホーム画面の表示
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+//一覧画面の表示
 Route::get('/items', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
+Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
+
+//登録画面の表示
 Route::get('/items/add', [App\Http\Controllers\ItemController::class, 'add']);
 Route::post('/items/add', [App\Http\Controllers\ItemController::class, 'store']);
+
+//編集画面の表示
 Route::get('/items/edit', [App\Http\Controllers\ItemController::class, 'edit']);
-Route::post('/item', [App\Http\Controllers\ItemController::class, 'store'])->name('item');
-Route::delete('/item/{item}', [App\Http\Controllers\ItemController::class, 'destroy'])->name('/item/{item}');
-Route::get('/', function () {
-    return view('welcome');});
+Route::post('/items/edit', [App\Http\Controllers\ItemController::class, 'store']);
+Route::get('/items/edit{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+
+//削除
+Route::post('/destroy{id}', [ItemController::class, 'destroy']);

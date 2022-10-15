@@ -29,13 +29,15 @@
     ?>
  
  <div class="card-body">
-        <form action="" method="post">
+        <form action="{{ url('/items/add') }}" method="post">
+        @csrf
+        <input type="hidden" name="user_id" value="{{$user_id}}">
         <label for="name" class="col-form-label">名前</label>
-        <input id="title" type="text" class="form-control" name="name" value="">
+        <input id="title" type="text" class="form-control" name="name" >
         <label for="name" class="col-form-label">状態</label>
-        <input id="title" type="text" class="form-control" name="name" value="">    
+        <input id="title" type="text" class="form-control" name="status" >    
         <label for="name" class="col-form-label">詳細</label>
-        <input id="title" type="text" class="form-control" name="name" value="">
+        <input id="title" type="text" class="form-control" name="detail" >
             
         <p><input type="submit" name="btn_confirm" value="登録"></p>   
         </form>

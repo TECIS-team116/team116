@@ -6,8 +6,6 @@ use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Models\Task;
-
 class ItemController extends Controller
 {
     /**
@@ -23,30 +21,35 @@ class ItemController extends Controller
             'items' => $items,
         ]);
     }
+    /**
+        *登録画面   
+        *@param Request $request
+        * @return Response
+        *
+        */
+
     public function add(Request $request)
     {
         $user_id = Auth::id();
         return view('items.add',compact('user_id'));
         
     }
+    /**
+        *編集画面
+        * @param Request $request
+        * @param Item $item
+        * @return Response
+        */
     public function edit(Request $request)
     {
         return view('items.edit');
         
     }
-    /**
-        * タスク登録
-        *
-        * @param Request $request
-        * @return Response
-        */
         public function store(Request $request)
         {
             $this->validate($request, [
                 'name' => 'required|max:255',
             ]);
-    
-            // タスク作成
             Item::create([
                 'user_id' => 0,
                 'name' => $request->name,
@@ -56,6 +59,23 @@ class ItemController extends Controller
             ]); 
             return redirect('/items');
         }
+
+        public function getEdit($id)
+        {
+            $user = $this->user->selectUserFindById($id);
+            return view('users.edit', compact('user'));
+        }
+        public function postEdit($id, Request $request)
+    {
+        // フォームから渡されたデータの取得
+        $user = $request->post();
+        
+        // DBへ更新依頼
+        $this->user->updateUserFindById($user);
+
+        // 再度編集画面へリダイレクト
+        return redirect()->route('users.edit', ['id' => $id]);
+    }
         /**
         * タスク削除
         *
@@ -65,8 +85,8 @@ class ItemController extends Controller
         */
     public function destroy(Request $request, Item $item)
     {
+        $item = Item::find($);
         $item->delete();
         return redirect('/items');
     }
-    
-}
+}    

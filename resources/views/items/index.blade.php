@@ -29,7 +29,7 @@
     <div class="panel-heading">
 
     </div>
-<a href="/items/add">商品登録</a>
+<a href="/items/add"><button type="button" class="btn btn-primary">商品登録</button></a>
     <div class="panel-body">
         <table class="table table-striped item-table">
             <!-- テーブルヘッダ -->
@@ -39,7 +39,9 @@
                 <th>状態</th>
                 <th>詳細</th>
                 <th>&nbsp;</th>
-                <a href="/items/edit">編集</a>
+
+                <td><a href="/items/edit"><button type="button" class="btn btn-primary">編集</button></a></td>
+                <td><button type="button" class="btn btn-primary">削除</button></td>
             </thead>
             <!-- テーブル本体 -->
             <tbody>

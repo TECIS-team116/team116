@@ -1,12 +1,13 @@
 <?php
- 
+
 namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
- 
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Task;
- 
+
 class ItemController extends Controller
 {
     /**
@@ -24,7 +25,8 @@ class ItemController extends Controller
     }
     public function add(Request $request)
     {
-        return view('items.add');
+        $user_id = Auth::id();
+        return view('items.add',compact('user_id'));
         
     }
     public function edit(Request $request)
@@ -47,7 +49,10 @@ class ItemController extends Controller
             // タスク作成
             Item::create([
                 'user_id' => 0,
-                'name' => $request->name
+                'name' => $request->name,
+                'status' => $request->status,
+                'type' => 0,
+                'detail' => $request->detail
             ]); 
             return redirect('/items');
         }

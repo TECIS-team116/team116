@@ -24,7 +24,7 @@ class ItemController extends Controller
     /**
         *登録画面   
         *@param Request $request
-        * @return Response
+        *@return Response
         *
         */
 
@@ -71,7 +71,7 @@ class ItemController extends Controller
                 'name' => 'required|max:255',
             ]);
             Item::create([
-                'user_id' => 0,
+                'user_id' => $request->user_id,
                 'name' => $request->name,
                 'status' => $request->status,
                 'type' => 0,

@@ -31,8 +31,8 @@ Route::post('/items/add', [App\Http\Controllers\ItemController::class, 'store'])
 
 //編集画面の表示
 Route::get('/items/edit', [App\Http\Controllers\ItemController::class, 'edit']);
-Route::post('/items/edit', [App\Http\Controllers\ItemController::class, 'store']);
-Route::get('/items/edit{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+Route::post('/items/update', [App\Http\Controllers\ItemController::class, 'update']);
+Route::get('/items/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
 
 //削除
-Route::post('/destroy{id}', [ItemController::class, 'destroy']);
+Route::get('/items/delete/{id}', [App\Http\Controllers\ItemController::class, 'delete']);

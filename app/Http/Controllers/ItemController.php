@@ -42,9 +42,29 @@ class ItemController extends Controller
         */
     public function edit(Request $request)
     {
-        return view('items.edit');
+        $request->session()->put('item_id', $request->id);
+        $items=Item::find($request->id);
+        return view('items.edit', compact('items'));
         
     }
+
+    public function update(Request $request)
+    {
+        $id=$request->session()->get('item_id');
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+        $item=Item::find($id);
+        $item->user_id=Auth::user()->id;
+        $item->name=$request->name;
+        $item->status=$request->status;
+        $item->type=0;
+        $item->detail= $request->detail;
+        $item->save();
+        
+        return redirect('/items');
+    }
+
         public function store(Request $request)
         {
             $this->validate($request, [
@@ -60,21 +80,10 @@ class ItemController extends Controller
             return redirect('/items');
         }
 
-        public function getEdit($id)
-        {
-            $user = $this->user->selectUserFindById($id);
-            return view('users.edit', compact('user'));
-        }
-        public function postEdit($id, Request $request)
+        public function delete(Request $request)
     {
-        // フォームから渡されたデータの取得
-        $user = $request->post();
-        
-        // DBへ更新依頼
-        $this->user->updateUserFindById($user);
-
-        // 再度編集画面へリダイレクト
-        return redirect()->route('users.edit', ['id' => $id]);
+        Item::destroy($request->id);
+        return redirect('/items');
     }
         /**
         * タスク削除
@@ -85,7 +94,7 @@ class ItemController extends Controller
         */
     public function destroy(Request $request, Item $item)
     {
-        $item = Item::find($);
+        
         $item->delete();
         return redirect('/items');
     }

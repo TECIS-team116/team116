@@ -40,8 +40,6 @@
                 <th>詳細</th>
                 <th>&nbsp;</th>
 
-                <td><a href="/items/edit"><button type="button" class="btn btn-primary">編集</button></a></td>
-                <td><button type="button" class="btn btn-primary">削除</button></td>
             </thead>
             <!-- テーブル本体 -->
             <tbody>
@@ -51,7 +49,14 @@
                     <td class="table-text">{{ $item->id }}</td>
                     <td class="table-text">{{ $item->name }}</td>
                     <td class="table-text">{{ $item->status }}</td>
-                    <td class="table-text">{{ $item->detail }}</td>    
+                    <td class="table-text">{{ $item->detail }}</td>  
+                    <td><a href="/items/edit/{{$item->id}}"><button type="button" class="btn btn-primary">編集</button></a>
+                <br><form action="{{ url('/items/delete') }}/{{$item->id}}" method="get">
+                @csrf
+                <button type="submit" class='btn btn-danger'>削除</button>
+            
+                </form>
+            </td>  
                 </tr>
                 @endforeach
             </tbody>

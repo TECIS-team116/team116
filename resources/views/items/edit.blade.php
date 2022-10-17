@@ -30,13 +30,13 @@
     ?>
  
  <div class="card-body">
-        <form action="" method="post">
+        <form action="{{ url('items/update') }}" method="post">
         <label for="name" class="col-form-label">名前</label>
-        <input id="title" type="text" class="form-control" name="name" value="">
-        <label for="name" class="col-form-label">状態</label>
-        <input id="title" type="text" class="form-control" name="name" value="">    
-        <label for="name" class="col-form-label">詳細</label>
-        <input id="title" type="text" class="form-control" name="name" value="">   
+        <input id="name" type="text" class="form-control" name="name" value="{{$items->name}}">
+        <label for="status" class="col-form-label">状態</label>
+        <input id="status" type="text" class="form-control" name="status" value="{{$items->status}}">    
+        <label for="detail" class="col-form-label">詳細</label>
+        <input id="detail" type="text" class="form-control" name="detail" value="{{$items->detail}}">   
         
         <!-- TODO: 編集ボタン -->
         <td>
@@ -48,15 +48,6 @@
             </form>
         </td>  
 
-            <!-- TODO: 削除ボタン -->
-        <td>
-            <form action="" method="post">
-                @csrf
-                <button type="submit" class="btn-confirm">
-                    削除
-                </button>
-            </form>
-        </td>  
 </form>
 </div>
 @endsection

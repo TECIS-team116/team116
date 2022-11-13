@@ -9243,17 +9243,26 @@ h3 {
   }
 }
 
-form.aaa {
-  width: 80%;
-  margin: 0 auto;
-}
+  form.space {
+    width: 80%;
+    margin: 0 auto;
+  }
 
-.offset-md-100 {
-  margin: 0 auto;
-}
+  .offset-md-100 {
+    margin: 0 auto;
+  }
 
-@media (min-width: 768px){
-  .col-md-6 {
-    max-width: 100%;
-}
-}
+  .text-align-center {
+    text-align:center;
+  }
+
+  @media (min-width: 768px){
+    .col-md-6 {
+      max-width: 100%;
+  }
+  }
+
+  .space-1 {
+    width:160px;
+    height:50px;
+  }

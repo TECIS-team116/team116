@@ -4,20 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
+            <div class="card">      
 
                 <div class="card-body">
-                    <h1 style="text-align:center;">商品管理システム</h1>
+                    <h1 class="text-align-center">商品管理システム</h1>
 
-                    <form class="aaa" method="POST" action="{{ route('login') }}">
+                    <form class="space" method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div style="white-space: nowrap;"><br><br><label for="email" class=" col-md-4 col-form-label text-md-left">{{ __('メールアドレス') }}</label>
+                        <div class="dropdown-toggle"><br><label for="email" class="col-md-4 col-form-label text-md-left">{{ __('メールアドレス') }}</label>
                         </div>
                         <div>
 
             
-                            <div class="col-md-6"  style ="text-lalign:center;">
+                            <div class="col-md-6 text-align-center">
                                 <input id="email" type="email"  class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -45,32 +44,15 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div> --}}
-                        <div><br><br></div>
                         
-                        <div style="text-align:center;" class="form-group row mb-0">
+                        <div><br></div>
+                        
+                        <div class="form-group row mb-0 text-align-center">
                             <div class="col-md-8 offset-md-100">
-                                <button type="submit" class="btn btn-primary" style="width:160px;height:50px;" >
+                                <button type="submit" class="btn btn-primary space-1">
                                    {{ __('ログイン') }}
                                 </button>
-                                <br><br><br>
-
-                                {{-- @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif --}}
-                            </div>
+                         </div>
                         </div>
                     </form>
                 </div>
